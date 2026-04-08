@@ -2,6 +2,10 @@
 
 A React-based calendar experience with month navigation, day selection, reminder management, notes, and an inspirational hero carousel.
 
+## Live Demo
+
+- https://calendartufsid.vercel.app/
+
 ## Features
 
 - Month-by-month navigation across the full year.
