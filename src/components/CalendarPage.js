@@ -45,7 +45,7 @@ function CalendarPage() {
   const monthShortLabel = MONTH_SHORT_NAMES[activeMonthIndex];
   const daysInMonth = useMemo(() => new Date(year, activeMonthIndex + 1, 0).getDate(), [year, activeMonthIndex]);
   const monthSlides = monthQuoteSlides[activeMonthIndex] || [];
-  const activeImportantDays = monthImportantDays[activeMonthIndex] || [];
+  const activeImportantDays = useMemo(() => monthImportantDays[activeMonthIndex] || [], [activeMonthIndex]);
   const reminders = remindersByMonth[activeMonthIndex] || {};
   const bulletNotes = bulletNotesByMonth[activeMonthIndex] || [];
 
