@@ -1,0 +1,124 @@
+.important-days-card {
+  background: linear-gradient(180deg, var(--cal-panel-grad-start) 0%, var(--cal-panel-grad-end) 100%);
+  border: 1px solid var(--cal-border);
+  border-radius: 12px;
+  padding: clamp(5px, calc(4px + var(--panel-bottom-ratio-num, 0.3) * 10px), 9px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88), 0 6px 14px rgba(16, 24, 40, 0.05);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.important-days-title {
+  font-family: var(--cal-font-display);
+  font-size: clamp(0.58rem, calc(0.46rem + var(--panel-bottom-ratio-num, 0.3) * 0.18rem), 0.74rem);
+  font-weight: 800;
+  color: var(--cal-text-main);
+  letter-spacing: 0.01em;
+  margin: 0 0 clamp(1px, calc(1px + var(--panel-bottom-ratio-num, 0.3) * 3px), 3px);
+}
+
+.important-days-list {
+  list-style: none;
+  padding: 0 0 10px;
+  margin: 0 0 6px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(44px, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  align-content: stretch;
+  gap: clamp(2px, calc(1px + var(--panel-bottom-ratio-num, 0.3) * 3px), 3px);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.important-days-list li {
+  min-width: 0;
+  min-height: 0;
+}
+
+.important-day-item {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--cal-border);
+  background: linear-gradient(180deg, var(--cal-card-grad-start) 0%, var(--cal-card-grad-end) 100%);
+  border-radius: 8px;
+  padding: clamp(2px, calc(1px + var(--panel-bottom-ratio-num, 0.3) * 4px), 4px);
+  display: block;
+  text-align: left;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(185, 201, 223, 0.6), 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.important-day-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1px;
+  min-height: 0;
+}
+
+.important-day-item:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cal-accent) 42%, transparent), 0 6px 10px rgba(15, 23, 42, 0.1);
+}
+
+.important-day-active {
+  border-color: var(--cal-accent);
+  box-shadow: 0 0 0 1px var(--cal-accent);
+}
+
+.important-day-date {
+  font-family: var(--cal-font-meta);
+  font-size: clamp(0.42rem, calc(0.38rem + var(--panel-bottom-ratio-num, 0.3) * 0.22rem), 0.5rem);
+  color: var(--cal-text-muted);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.important-day-name {
+  font-family: var(--cal-font-body);
+  font-size: clamp(0.46rem, calc(0.42rem + var(--panel-bottom-ratio-num, 0.3) * 0.26rem), 0.58rem);
+  color: var(--cal-text-main);
+  font-weight: 700;
+  line-height: 1.12;
+  word-break: break-word;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.important-day-tag {
+  font-family: var(--cal-font-body);
+  font-size: clamp(0.42rem, calc(0.38rem + var(--panel-bottom-ratio-num, 0.3) * 0.2rem), 0.5rem);
+  color: var(--cal-event-text);
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .important-days-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: minmax(62px, auto);
+    overflow: auto;
+    padding-bottom: 4px;
+  }
+
+  .important-day-name {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
+

@@ -1,0 +1,156 @@
+.day-detail-card {
+  background: linear-gradient(180deg, var(--cal-dark-panel-start) 0%, var(--cal-dark-panel-end) 100%);
+  color: #f8fafc;
+  border-radius: 12px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 16px rgba(7, 12, 24, 0.28);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+
+.day-detail-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(159, 209, 255, 0.18);
+  padding: clamp(6px, calc(4px + var(--panel-bottom-ratio-num, 0.5) * 7px), 9px);
+}
+
+.day-detail-label {
+  font-family: var(--cal-font-meta);
+  font-size: clamp(0.52rem, calc(0.46rem + var(--panel-bottom-ratio-num, 0.5) * 0.18rem), 0.6rem);
+  letter-spacing: 0.12em;
+  color: var(--cal-dark-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+
+}
+
+.day-detail-title {
+  font-family: var(--cal-font-display);
+  font-size: clamp(0.7rem, calc(0.6rem + var(--panel-bottom-ratio-num, 0.5) * 0.4rem), 0.86rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin: 0 0 4px;
+}
+
+.day-reminder-list {
+  list-style: none;
+  padding: clamp(4px, calc(3px + var(--panel-bottom-ratio-num, 0.5) * 5px), 7px);
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  gap: clamp(2px, calc(1px + var(--panel-bottom-ratio-num, 0.5) * 5px), 4px);
+  overflow-y: auto;
+  align-content: start;
+}
+
+.day-reminder-item {
+  border-radius: 7px;
+  border: 1px solid color-mix(in srgb, var(--cal-dark-accent) 28%, transparent);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(1px);
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  padding: 0;
+}
+
+.day-reminder-item:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--cal-dark-accent) 52%, transparent);
+  box-shadow: 0 5px 10px rgba(2, 6, 23, 0.22);
+}
+
+.day-reminder-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  padding: clamp(3px, calc(2px + var(--panel-bottom-ratio-num, 0.5) * 4px), 6px)
+    clamp(4px, calc(3px + var(--panel-bottom-ratio-num, 0.5) * 4px), 7px);
+  display: grid;
+  gap: clamp(1px, calc(var(--panel-bottom-ratio-num, 0.5) * 2px), 2px);
+}
+
+.day-reminder-date {
+  font-family: var(--cal-font-meta);
+  font-size: clamp(0.46rem, calc(0.42rem + var(--panel-bottom-ratio-num, 0.5) * 0.18rem), 0.54rem);
+  color: var(--cal-dark-accent);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.day-reminder-purpose {
+  font-family: var(--cal-font-body);
+  font-size: clamp(0.5rem, calc(0.46rem + var(--panel-bottom-ratio-num, 0.5) * 0.2rem), 0.6rem);
+  color: #f8fafc;
+  font-weight: 600;
+  line-height: 1.22;
+}
+
+.day-reminder-time {
+  font-family: var(--cal-font-body);
+  font-size: 0.48rem;
+  color: var(--cal-dark-muted);
+}
+
+.day-reminder-active {
+  border-color: var(--cal-accent);
+  box-shadow: inset 0 0 0 1px var(--cal-accent), 0 0 0 1px color-mix(in srgb, var(--cal-dark-accent) 26%, transparent);
+}
+
+.day-reminder-empty {
+  font-family: var(--cal-font-body);
+  font-size: 0.6rem;
+  color: var(--cal-dark-muted);
+  border: 1px dashed color-mix(in srgb, var(--cal-dark-accent) 30%, transparent);
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.day-reminder-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.day-reminder-list::-webkit-scrollbar-track {
+  background: rgba(159, 209, 255, 0.08);
+  border-radius: 999px;
+}
+
+.day-reminder-list::-webkit-scrollbar-thumb {
+  background: rgba(159, 209, 255, 0.38);
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  .day-detail-label {
+    font-size: 0.66rem;
+  }
+
+  .day-detail-title {
+    font-size: 0.92rem;
+  }
+
+  .day-reminder-btn {
+    padding: 8px 9px;
+    gap: 3px;
+  }
+
+  .day-reminder-date {
+    font-size: 0.68rem;
+  }
+
+  .day-reminder-purpose {
+    font-size: 0.8rem;
+  }
+
+  .day-reminder-time {
+    font-size: 0.66rem;
+  }
+}

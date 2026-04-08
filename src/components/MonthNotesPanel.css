@@ -1,0 +1,127 @@
+.month-notes-card {
+  background: linear-gradient(180deg, var(--cal-panel-grad-start) 0%, var(--cal-panel-grad-end) 100%);
+  border: 1px solid var(--cal-border);
+  border-radius: 12px;
+  padding: clamp(5px, calc(4px + var(--panel-top-ratio-num, 0.5) * 8px), 8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88), 0 6px 14px rgba(16, 24, 40, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.month-notes-title {
+  font-family: var(--cal-font-display);
+  font-size: clamp(0.64rem, calc(0.56rem + var(--panel-top-ratio-num, 0.5) * 0.42rem), 0.82rem);
+  font-weight: 800;
+  color: var(--cal-text-main);
+  letter-spacing: 0.01em;
+  margin-bottom: clamp(3px, calc(1px + var(--panel-top-ratio-num, 0.5) * 7px), 6px);
+}
+
+.month-notes-input-row {
+  display: flex;
+  gap: clamp(3px, calc(1px + var(--panel-top-ratio-num, 0.5) * 5px), 5px);
+  margin-bottom: clamp(4px, calc(2px + var(--panel-top-ratio-num, 0.5) * 7px), 7px);
+}
+
+.month-notes-input {
+  font-family: var(--cal-font-body);
+  background: var(--cal-surface);
+  border: 1px solid var(--cal-border-strong);
+  font-size: clamp(0.23rem, calc(0.48rem + var(--panel-top-ratio-num, 0.5) * 0.02rem), 0.7rem);
+  font-weight: 700;
+  height: clamp(24px, calc(20px + var(--panel-top-ratio-num, 0.5) * 12px), 29px);
+  border-radius: 7px;
+  padding: clamp(3px, calc(2px + var(--panel-top-ratio-num, 0.5) * 4px), 6px)
+    clamp(5px, calc(4px + var(--panel-top-ratio-num, 0.5) * 4px), 8px);
+  width: 100%;
+  min-width: 0;
+}
+
+.month-notes-add-btn {
+  font-family: var(--cal-font-meta);
+  border: none;
+  background: var(--cal-accent);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: clamp(0.54rem, calc(0.48rem + var(--panel-top-ratio-num, 0.5) * 0.01rem), 0.62rem);
+  font-weight: 700;
+  padding: 0 clamp(7px, calc(4px + var(--panel-top-ratio-num, 0.7) * 8px), 10px);
+  box-shadow: 0 2px 6px var(--cal-highlight-shadow);
+  width: 30px;
+}
+
+.month-notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  gap: clamp(3px, calc(1px + var(--panel-top-ratio-num, 0.5) * 6px), 5px);
+  align-content: start;
+}
+
+.month-notes-item {
+  font-family: var(--cal-font-body);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 4px;
+  height: auto;
+  font-size: clamp(0.52rem, calc(0.48rem + var(--panel-top-ratio-num, 0.5) * 0.2rem), 0.62rem);
+  color: var(--cal-text-main);
+  background: var(--cal-surface);
+  border: 1px solid var(--cal-border);
+  border-radius: 8px;
+  padding: clamp(3px, calc(2px + var(--panel-top-ratio-num, 0.5) * 4px), 6px)
+    clamp(5px, calc(4px + var(--panel-top-ratio-num, 0.5) * 5px), 8px);
+  box-shadow: inset 0 0 0 1px rgba(185, 201, 223, 0.55), 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.month-notes-bullet {
+  color: var(--cal-accent);
+  font-weight: 800;
+}
+
+.month-notes-text {
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.month-notes-delete-btn {
+  border: none;
+  background: transparent;
+  color: var(--cal-danger);
+  font-size: clamp(0.66rem, calc(0.58rem + var(--panel-top-ratio-num, 0.5) * 0.2rem), 0.76rem);
+  line-height: 1;
+  padding: 0;
+}
+
+.month-notes-empty {
+  font-family: var(--cal-font-body);
+  font-size: 0.6rem;
+  color: var(--cal-text-muted);
+}
+
+@media (max-width: 768px) {
+  .month-notes-input-row {
+    gap: 8px;
+  }
+
+  .month-notes-input {
+    min-height: 36px;
+    font-size: 0.8rem;
+  }
+
+  .month-notes-add-btn {
+    min-height: 36px;
+    font-size: 0.76rem;
+    padding-inline: 12px;
+  }
+
+  .month-notes-item {
+    font-size: 0.76rem;
+  }
+}

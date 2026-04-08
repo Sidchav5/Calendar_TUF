@@ -1,0 +1,134 @@
+.hero-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--cal-surface-alt);
+  border: 1px solid var(--cal-border);
+  box-shadow: var(--cal-shadow-soft);
+}
+
+.hero-media {
+  position: relative;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;    
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.hero-diagonal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background: linear-gradient(320deg, var(--cal-hero-overlay-start) 0%, var(--cal-hero-overlay-end) 48%, transparent 49%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #f8fafc;
+  padding: 14px;
+  max-width: 82%;
+}
+
+.hero-kicker {
+  font-family: var(--cal-font-meta);
+  letter-spacing: 0.18em;
+  font-size: 0.6rem;
+  font-weight: 600;
+  opacity: 0.94;
+  text-transform: uppercase;
+}
+
+.hero-month {
+  font-family: var(--cal-font-display);
+  letter-spacing: 0.08em;
+  font-size: 1.14rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-quote {
+  font-family: var(--cal-font-body);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.hero-author {
+  font-family: var(--cal-font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.hero-controls {
+  position: absolute;
+  z-index: 3;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-arrow {
+  font-family: var(--cal-font-meta);
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--cal-text-main);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.hero-badge {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+  background: var(--cal-hero-overlay-start);
+  color: #f8fafc;
+  padding: 5px 8px;
+  border-radius: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  background: var(--cal-surface-alt);
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cal-hero-dot);
+}
+
+.hero-dot-active {
+  background: var(--cal-accent);
+}
+
+@media (max-width: 767px) {
+  .hero-media {
+    min-height: 220px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  .hero-month {
+    font-size: 1.35rem;
+  }
+}
